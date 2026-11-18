@@ -11,6 +11,7 @@ builder.Services.AddDbContext<MapDbContext>(o => o.UseSqlServer(builder.Configur
 builder.Services.AddOpenApi();
 
 var app = builder.Build();
+
 app.MapGet("/ping", (MapDbContext db) => db.Users.Count());
 
 // Configure the HTTP request pipeline.
